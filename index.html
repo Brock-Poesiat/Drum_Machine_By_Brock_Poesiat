@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
-<!--Note: audio functionality will break if elements added between the button and audio elements -->
+<!--Note: audio functionality will break if elements added in between the button and audio elements -->
 <!--this is b/c freeCodeCamp requires the button and audio IDs to be the same. Therefore, audio elements are indexed -->
-<!--with [0] in the playAudio function instead of using document.getElementById which would return multple elements -->
+<!--with [0] in the playAudio function instead of using document.getElementById which would return multple references -->
 
 <head>
     <!-- Required meta tags -->
@@ -13,11 +13,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <title>Drum Kit</title>
-
   <script>
 
     function playAudio(id) {
-      //play the first child of the button element passed into this function
+      //play the child audio element of the button id passed into this function
       document.getElementById(id).children[0].play();
 
       //display inner text of child audio element
@@ -25,19 +24,18 @@
     }
 
     function pushBtn(event) {
-      // grab the button code pushed by the user and convert it to the corresponding key string
+      //when user pushes a button, grab the button code and convert it to its corresponding key string
       const keyPushed = String.fromCharCode(event.keyCode);
 
-      // create an array of strings of each child of the div with id="buttons"
+      //create an array of strings representing each of the buttons
       const arrOfDrumKeys = document.getElementById("buttons").innerText.replace(/\s/g, '').split("");
       if (arrOfDrumKeys.includes(keyPushed)) {
         playAudio(keyPushed);
       }
     }
 
-    // call pushBtn function when user presses a button
+    //call the pushBtn function when the user presses a button
     document.addEventListener('keydown', pushBtn);
-
   </script>
 
   <style>
@@ -49,11 +47,8 @@
       height: 60px;
       width: 60px;
     }
-
   </style>
-
 </head>
-
 
 <body>
   <!-- Optional JavaScript -->
@@ -67,35 +62,35 @@
 
     <div class="buttons" id="buttons">
       <button id="Q" class="drum-pad" onclick="playAudio(id)">Q
-        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3" class="clip" id="Q">edgy riff</audio>
+        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3" class="clip" id="Q">Edgy Riff</audio>
       </button>
       <button id="W" class="drum-pad" onclick="playAudio(id)">W
-        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3" class="clip" id="W">edgy riff with clap</audio>
+        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3" class="clip" id="W">Edgy Riff with Clap</audio>
       </button>
       <button id="E" class="drum-pad" onclick="playAudio(id)">E
-        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3" class="clip" id="E">edgy riff down stroke</audio>
+        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3" class="clip" id="E">Edgy Riff Down Stroke</audio>
       </button>
       <br>
       <br>
       <button id="A" class="drum-pad" onclick="playAudio(id)">A
-        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3" class="clip" id="A">strum</audio>
+        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3" class="clip" id="A">Strum</audio>
       </button>
       <button id="S" class="drum-pad" onclick="playAudio(id)">S
-        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3" class="clip" id="S">clap</audio>
+        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3" class="clip" id="S">Clap</audio>
       </button>
       <button id="D" class="drum-pad" onclick="playAudio(id)">D
-        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3" class="clip" id="D">hi-hat</audio>
+        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3" class="clip" id="D">Hi-hat</audio>
       </button>
       <br>
       <br>
       <button id="Z" class="drum-pad" onclick="playAudio(id)">Z
-        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3" class="clip" id="Z">kick + closed hi-hat</audio>
+        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3" class="clip" id="Z">Kick + Closed Hi-hat</audio>
       </button>
       <button id="X" class="drum-pad" onclick="playAudio(id)">X
-        <audio src="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3" class="clip" id="X">bass</audio>
+        <audio src="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3" class="clip" id="X">Bass</audio>
       </button>
       <button id="C" class="drum-pad" onclick="playAudio(id)">C
-        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3" class="clip" id="C">closed hi-hat</audio>
+        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3" class="clip" id="C">Closed Hi-hat</audio>
       </button>
       <br>
       <br>
