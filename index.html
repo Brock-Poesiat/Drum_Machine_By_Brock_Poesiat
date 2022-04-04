@@ -11,52 +11,11 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <title>Drum Kit</title>
-  <script>
-
-    function playAudio(id) {
-      //play the child audio element of the button id passed into this function
-      document.getElementById(id).children[0].play();
-
-      //display inner text of child audio element
-      document.getElementById("display").innerText = document.getElementById(id).children[0].innerText;
-    }
-
-    function pushBtn(event) {
-      //when user pushes a button, grab the button code and convert it to its corresponding key string
-      const keyPushed = String.fromCharCode(event.keyCode);
-
-      //create an array of strings representing each of the buttons
-      const arrOfDrumKeys = document.getElementById("buttons").innerText.replace(/\s/g, '').split("");
-      if (arrOfDrumKeys.includes(keyPushed)) {
-        playAudio(keyPushed);
-      }
-    }
-
-    //call the pushBtn function when the user presses a button
-    document.addEventListener('keydown', pushBtn);
-  </script>
-
-  <style>
-    body {
-      background-color: #20b2aa;
-    }
-
-    .drum-pad {
-      height: 60px;
-      width: 60px;
-    }
-  </style>
 </head>
 
 <body>
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
   <h1 class="text-center">Drum Kit by Brock Poesiat</h1>
   <container class="drum-machine text-center mb-4" id="drum-machine">
 
@@ -96,5 +55,12 @@
       <br>
       <div id="display"></div>
   </container>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  <script src="js/main.js"></script>
 </body>
